@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion HUB online store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<script>
+  function showContactForm() {
+    const formSection = document.getElementById("contact-form");
+    
+    if (formSection.style.display === "none") {
+      formSection.style.display = "block"; 
+    } else {
+      formSection.style.display = "none"; 
+    }
+  }
+</script>
+
+  <header>
+     <img src="D:/My fashion HUB web site/logo.png" alt="Business Logo" class="logo">
+    <h1>Fashion <b>HUB</b> online store</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Our Store</h2>
+    <p>"Welcome to Our Online Store, your one-stop shop for a wide range of high-quality products! We offer the latest smartphones, Computers, smartwatches, and stylish watches for both men and women. In addition, explore our collection of electronics, gift items, educational supplies, stationery, perfumes, and decorative wall art. Whatever you're looking for, we have something for everyone at great prices!"</p>
+  </section>
+
+  <section id="products">
+  <h2>Our Products</h2>
+
+  <div class="product-container">
+  	
+	      <!-- smart phones-->
+      <div class="product">
+        <img src="D:/My fashion HUB web site/phone.jpg" alt="Smartphone" class="phone-image">
+        <h3>Smart Phones</h3>
+        <button><a href="smartphones.html">More details</a></button>
+      </div>
+
+		  <!-- smart phones-->
+    <div class="product">
+      <img src="D:/My fashion HUB web site/watches.jpg" alt="watch" class="watches-image">
+      <h3>Watches</h3>
+      <button><a href="watches.html">More details</a></button>
+    </div>
+		  <!-- smart phones-->
+	<div class="product">
+      <img src="D:/My fashion HUB web site/Computers.jpg" alt="watch" class="computer-image">
+      <h3>Computers</h3>
+      <button><a href="Computers.html">More details</a></button>
+    </div>
+	
+  </div>
+</section>
+
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We specialize in providing high-quality smartphones and electronics at unbeatable prices.</p>
+  </section>
+
+	
+<section id="contacts">
+  <div class="contact">
+    <h2>Contact Us</h2>
+    <button onclick="showContactForm()">Contact Us</button>
+  </div>
+
+  <!-- Contact Form Section (Initially hidden) -->
+  <div id="contact-form" style="display:none;">
+    <h3>Contact Form</h3>
+    <form action="#">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required><br>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Feedback</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="feedback-section">
+    <h2>Customer Feedback</h2>
+
+    <!-- Feedback Form -->
+    <form id="feedback-form">
+      <label for="customer-name">Name:</label>
+      <input type="text" id="customer-name" required><br>
+
+      <label for="customer-feedback">Feedback:</label>
+      <textarea id="customer-feedback" required></textarea><br>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <!-- Feedback Table -->
+    <table id="feedback-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Feedback</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Feedback rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    // JavaScript to handle form submission and update table
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get input values
+      const name = document.getElementById('customer-name').value;
+      const feedback = document.getElementById('customer-feedback').value;
+
+      // Create a new row for the table
+      const newRow = document.createElement('tr');
+
+      // Create table data for name and feedback
+      const nameCell = document.createElement('td');
+      nameCell.textContent = name;
+      const feedbackCell = document.createElement('td');
+      feedbackCell.textContent = feedback;
+
+      // Append the cells to the row
+      newRow.appendChild(nameCell);
+      newRow.appendChild(feedbackCell);
+
+      // Append the new row to the table body
+      document.querySelector('#feedback-table tbody').appendChild(newRow);
+
+      // Clear the form inputs after submission
+      document.getElementById('feedback-form').reset();
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+  <footer>
+    <p>&copy; JAYALATH codeHUB Software. All rights reserved.</p>
+  </footer>
+</body>
+</html>
